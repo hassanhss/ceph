@@ -42,8 +42,7 @@ public class CephTest {
         //注意：因为是本地方式，访问相应的S3文件系统，所以signingRegion可以默认为空。
         s3Client = AmazonS3ClientBuilder.standard()
                 .withCredentials(new AWSStaticCredentialsProvider(awsCredentials))
-                .withEndpointConfiguration(
-                        new AwsClientBuilder.EndpointConfiguration(ENDPOINT,""))
+                .withEndpointConfiguration(new AwsClientBuilder.EndpointConfiguration(ENDPOINT,""))
                 .build();
 
         //测试是否连接上去S3
